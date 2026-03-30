@@ -2,11 +2,13 @@
 
 namespace CoffeeRecordsIdentity.Models
 {
-    public class CoffeeCup
+    public class CoffeeCup : ApplicationUser
     {
+        private string userName = String.Empty;
+
         public int CoffeeCupId { get; set; }
         [Display(Name = "Short Name")]
-        public string UserName { get; set; } = String.Empty;
+        public string UserName { get; set; } = String.Empty;   
         //public ApplicationUser UserId { get; set; } // asi?
         [Display(Name = "Time and date")]
         public DateTime Created { get; set; }

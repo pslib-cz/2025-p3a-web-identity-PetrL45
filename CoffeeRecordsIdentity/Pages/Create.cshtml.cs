@@ -1,11 +1,13 @@
 using CoffeeRecordsIdentity.Data;
 using CoffeeRecordsIdentity.InputModels;
 using CoffeeRecordsIdentity.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace CoffeeRecordsIdentity.Pages
 {
+    [Authorize(Roles = "admin, user")]
     public class CreateModel(ILogger<CreateModel> logger, ApplicationDbContext context) : PageModel
     {
         private readonly ILogger<CreateModel> _logger = logger;
